@@ -16,6 +16,8 @@ namespace oopConcepts
         public DateTime borrowedDate { get; set; }
         public DateTime returnDate { get; set; }
 
+        public Transaction() { }
+
         public Transaction(Book book , User user)
         {
             transactionId = GenerateID();
@@ -60,6 +62,16 @@ namespace oopConcepts
                     Console.WriteLine("No transaction found with the given ID.");
                 }
             }
+        }
+
+        public DateTime ReturnTransactionRetunDate(int ID)
+        {
+            if (transactionId == ID)
+            {
+                return returnDate;
+            }
+
+            return default(DateTime);
         }
     }
 }

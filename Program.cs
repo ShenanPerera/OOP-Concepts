@@ -7,6 +7,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Library library = new Library();
+            Transaction transaction = new Transaction();
 
             Book book1 = new Book("Book 1","Author 1" );
             Book book2 = new Book("Book 2", "Author 2" );
@@ -57,6 +58,13 @@ namespace ConsoleApp1
 
             library.DisplayBookInfo();
 
+            Console.WriteLine("-------- violations --------------");
+
+            LostBookViolation lostBookViolation = new LostBookViolation((decimal)500.0);
+            library.DisplayViolation(lostBookViolation);
+
+            LostBookViolation otherViolation = new LostBookViolation((decimal)200.0);
+            library.DisplayViolation(otherViolation);       
 
         }
     }

@@ -85,5 +85,11 @@ namespace oopConcepts
                 Console.WriteLine();
             }
         }
+
+        public void DisplayViolation(Violation violation)
+        {
+            decimal fine = violation.CalculateFine();
+            Console.WriteLine($"Fine for the violation : {fine}");
+        }
     }
 }
