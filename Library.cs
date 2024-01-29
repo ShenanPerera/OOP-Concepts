@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace oopConcepts
 {
@@ -90,6 +91,19 @@ namespace oopConcepts
         {
             decimal fine = violation.CalculateFine();
             Console.WriteLine($"Fine for the violation : {fine}");
+        }
+
+        public DateTime ReturnTransactionRetunDate(int ID)
+        {
+            foreach (Transaction transaction in transactions)
+            {
+                if (transaction.transactionId == ID)
+                {
+                    return transaction.returnDate;
+                }
+            }
+
+            return default(DateTime);
         }
     }
 }

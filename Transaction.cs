@@ -63,15 +63,5 @@ namespace oopConcepts
                 }
             }
         }
-
-        public DateTime ReturnTransactionRetunDate(int ID)
-        {
-            if (transactionId == ID)
-            {
-                return returnDate;
-            }
-
-            return default(DateTime);
-        }
     }
 }

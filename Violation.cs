@@ -32,10 +32,16 @@ namespace oopConcepts
     {
         private int daysOverDue;
         private decimal dailyFine;
+        private int transactionId;
+        private Library library;
 
-        public MisplacedBookViolation(Transaction transaction , decimal fine)
+        public MisplacedBookViolation(int transactionID , decimal fine , Library library)
         {
-            daysOverDue = (int)(DateTime.Now - transaction.returnDate).TotalDays;
+            this.transactionId = transactionID;
+            this.library = library;
+
+            DateTime returnDate = library?.ReturnTransactionRetunDate(transactionID) ?? DateTime.Now;
+            daysOverDue = (int)Math.Abs((DateTime.Now - returnDate).TotalDays);
             this.dailyFine = fine;  
         }
 

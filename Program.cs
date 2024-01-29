@@ -63,7 +63,10 @@ namespace ConsoleApp1
             LostBookViolation lostBookViolation = new LostBookViolation((decimal)500.0);
             library.DisplayViolation(lostBookViolation);
 
-            LostBookViolation otherViolation = new LostBookViolation((decimal)200.0);
+            MisplacedBookViolation misplacedBookViolation = new MisplacedBookViolation(2, (decimal)250.0 , library);
+            library.DisplayViolation(misplacedBookViolation);
+
+            OtherViolation otherViolation = new OtherViolation((decimal)100.0);
             library.DisplayViolation(otherViolation);       
 
         }
